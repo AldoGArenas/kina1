@@ -36,7 +36,7 @@ License URI: http://www.themevault.net/license/--}}
                 <div class="label">Share</div>
             </div>
 
-            <header class="top-nav-bar">
+            <header class="top-nav-bar">                
                 @include('partials.navbar')
             </header>
             <div class="banner-full-image">

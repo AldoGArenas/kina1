@@ -12,7 +12,7 @@ License URI: http://www.themevault.net/license/
 @import url('https://fonts.googleapis.com/css?family=Oswald:400,500,600,700');
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900');
 
-/*@import '../fonts/font-awesome-4.7.0/css/font-awesome.min.css';*/
+@import '../plugins/font-awesome/css/font-awesome.min.css';
 
 
 html {
@@ -225,7 +225,7 @@ h1,h2,h3,h4,h5,h6,p{
 
 /*banner*/
 .banner-full-image {
-    background: rgba(0, 0, 0, 0) url("../images/banner.png") no-repeat scroll center top / cover ;
+    background: rgba(0, 0, 0, 0) url("") no-repeat scroll center top / cover ;
     background-attachment: fixed;
     height: 480px;
     position: relative;
