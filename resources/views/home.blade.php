@@ -13,10 +13,13 @@ License URI: http://www.themevault.net/license/--}}
         <title>Snappy</title>
         <!-- Bootstrap core CSS -->
 		<link rel="stylesheet" href="{{ asset('plugins/bootstrap/css/bootstrap.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('plugins/font-awesome/css/font-awesome.min.css') }}">
-        <!-- Custom styles for this template -->
+        {{--<link rel="stylesheet" href="{{ asset('plugins/font-awesome/css/font-awesome.min.css') }}">--}}
+        <!-- Custom styles for this template -->         
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">  
+        <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
+        <script src="{{ asset('js/jquery.min.js') }}"></script>
+        <script src="{{ asset('plugins/bootstrap/js/bootstrap.min.js') }}"></script>  
+        <script src="{{ asset('js/custom.js') }}"></script>      
     </head>
     <body id="myPage">
         <div class="section-page-wrap">
@@ -36,7 +39,7 @@ License URI: http://www.themevault.net/license/--}}
                 <div class="label">Share</div>
             </div>
 
-            <header class="top-nav-bar">                
+            <header class="top-nav-bar"> 
                 @include('partials.navbar')
             </header>
             <div class="banner-full-image">
@@ -44,7 +47,7 @@ License URI: http://www.themevault.net/license/--}}
                     <h1>perfect photography</h1>
                     <a class="btn btn-primary" href="about.html">read more</a>
                 </div>
-            </div>           
+            </div>                    
                  @yield('content')           
 
             <!---footer--->
@@ -60,9 +63,7 @@ License URI: http://www.themevault.net/license/--}}
                 <i class="fa fa-angle-double-up" aria-hidden="true"></i> Top
             </div>
         </div>
-        <script src="{{ asset('js/jquery.min.js') }}"></script>
-        <script src="{{ asset('plugins/bootstrap/js/bootstrap.min.js') }}"></script>  
-        <script src="{{ asset('js/custom.js') }}"></script>        
+           
         <script>
             jQuery(window).load(function () {
                 $('#preloader-container').delay(650).fadeOut('slow')
