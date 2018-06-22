@@ -12,5 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('home');
+    return redirect()->route('inicio');
 });
+Route::get('/inicio', 'HomeController@index')->name('inicio');
+Route::get('/nosotros', 'NosotrosController@index')->name('nosotros');
+Route::get('/acerca', 'AcercaController@index')->name('acerca');
+Route::get('/contacto', 'ContactoController@index')->name('contacto');

@@ -1,3 +1,4 @@
+@extends('home')
 @section('content')
 <section id="about" class="section-padding">
 <div class="container">

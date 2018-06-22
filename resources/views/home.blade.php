@@ -10,7 +10,7 @@ License URI: http://www.themevault.net/license/--}}
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="images/favicon.png"/>
-        <title>Snappy</title>
+        <title>Kinametli</title>
         <!-- Bootstrap core CSS -->
 		<link rel="stylesheet" href="{{ asset('plugins/bootstrap/css/bootstrap.min.css') }}">
         {{--<link rel="stylesheet" href="{{ asset('plugins/font-awesome/css/font-awesome.min.css') }}">--}}
@@ -36,7 +36,7 @@ License URI: http://www.themevault.net/license/--}}
                 <div class="icon twitter"><i class="fa fa-twitter"></i></div>
                 <div class="icon google-plus"><i class="fa fa-google-plus"></i></div>
                 <div class="icon pinterest last"><i class="fa fa-pinterest-p"></i></div>
-                <div class="label">Share</div>
+                <div class="label">Comparte</div>
             </div>
 
             <header class="top-nav-bar"> 
@@ -44,7 +44,7 @@ License URI: http://www.themevault.net/license/--}}
             </header>
             <div class="banner-full-image">
                 <div class="banner-title">
-                    <h1>perfect photography</h1>
+                    @yield('title')                    
                     <a class="btn btn-primary" href="about.html">read more</a>
                 </div>
             </div>                    
