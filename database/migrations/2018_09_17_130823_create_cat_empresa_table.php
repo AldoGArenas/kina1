@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePromocionTable extends Migration
+class CreateCatEmpresaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class CreatePromocionTable extends Migration
      */
     public function up()
     {
-        Schema::create('promocion', function (Blueprint $table) {
+        Schema::create('cat_empresa', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('nombre');
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ class CreatePromocionTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('promocion');
+        Schema::dropIfExists('cat_empresa');
     }
 }

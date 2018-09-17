@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateArticulosCarritoTable extends Migration
+class CreateImagenTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class CreateArticulosCarritoTable extends Migration
      */
     public function up()
     {
-        Schema::create('articulos_carrito', function (Blueprint $table) {
+        Schema::create('imagen', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('archivo');
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ class CreateArticulosCarritoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('articulos_carrito');
+        Schema::dropIfExists('imagen');
     }
 }

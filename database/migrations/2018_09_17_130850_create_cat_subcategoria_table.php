@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCatMarcaTable extends Migration
+class CreateCatSubcategoriaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,13 @@ class CreateCatMarcaTable extends Migration
      */
     public function up()
     {
-        Schema::create('cat_marca', function (Blueprint $table) {
+        Schema::create('cat_subcategoria', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('nombre');
+            $table->integer('idCategoria');
             $table->timestamps();
+
+            $table->foreign('idCategoria')->references('id')->on('cat_categoria')->onDelete('cascade');
         });
     }
 
@@ -26,6 +30,6 @@ class CreateCatMarcaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cat_marca');
+        Schema::dropIfExists('cat_subcategoria');
     }
 }

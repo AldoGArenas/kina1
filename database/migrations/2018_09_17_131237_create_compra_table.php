@@ -15,7 +15,18 @@ class CreateCompraTable extends Migration
     {
         Schema::create('compra', function (Blueprint $table) {
             $table->increments('id');
+            $table->date('fecha', 200);
+            $table->double('total', 50);
+            $table->string('comprobante', 50);
+            $table->integer('idUsuario');
+            $table->integer('idProveedor', 100);
+
+            $table->foreign('idUsuario')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('idProveedor')->references('id')->on('proveedor')->onDelete('cascade');
+           
+ 
             $table->timestamps();
+
         });
     }
 
