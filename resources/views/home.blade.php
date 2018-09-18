@@ -45,7 +45,7 @@ License URI: http://www.themevault.net/license/--}}
             <div class="banner-full-image">
                 <div class="banner-title">
                     @yield('title')                    
-                    <a class="btn btn-primary" href="about.html">read more</a>
+                    <a class="btn btn-primary" href="{{route('nosotros')}}">read more</a>
                 </div>
             </div>                    
                  @yield('content')           
