@@ -18,9 +18,10 @@ class CreatePersonaTable extends Migration
             $table->string('nombres');
             $table->string('primerAp');
             $table->string('segundoAp');
-            $table->string('idTipoPersona');
+            $table->integer('idTipoPersona')->unsigned();
 
-       
+            $table->foreign('idTipoPersona')->references('id')->on('cat_tipo_persona')->onDelete('cascade');
+
             $table->timestamps();
         });
     }

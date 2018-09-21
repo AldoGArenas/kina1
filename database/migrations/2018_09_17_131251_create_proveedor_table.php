@@ -15,9 +15,9 @@ class CreateProveedorTable extends Migration
     {
         Schema::create('proveedor', function (Blueprint $table) {
             $table->increments('id');
-            $table->double('idEmpresa', 50);
-            $table->date('idMarca', 50);
-            $table->string('idPersona');
+            $table->integer('idEmpresa')->unsigned();
+            $table->integer('idMarca')->unsigned();
+            $table->integer('idPersona')->unsigned();
             $table->timestamps();
 
             $table->foreign('idEmpresa')->references('id')->on('cat_empresa')->onDelete('cascade');

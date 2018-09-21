@@ -15,14 +15,13 @@ class CreateArticulosCompraTable extends Migration
     {
         Schema::create('articulos_compra', function (Blueprint $table) {
             $table->increments('id');
-            $table->double('costoUnidad', 200);
-            $table->double('cantidad', 50);
-            $table->double('total', 50);
-            $table->integer('idCompra');
-            $table->integer('idProducto', 20);
+            $table->double('costoUnidad');
+            $table->double('cantidad');
+            $table->double('total');
+            $table->integer('idCompra')->unsigned();
+            $table->integer('idProducto')->unsigned();
 
-            $table->foreign('idVenta')->references('id')->on('venta')->onDelete('cascade');
-            $table->foreign('idPromocion')->references('id')->on('promocion')->onDelete('cascade');
+            $table->foreign('idCompra')->references('id')->on('venta')->onDelete('cascade');
             $table->foreign('idProducto')->references('id')->on('producto')->onDelete('cascade');
             $table->timestamps();
         });

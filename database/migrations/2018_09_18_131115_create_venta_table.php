@@ -15,13 +15,13 @@ class CreateVentaTable extends Migration
     {
         Schema::create('venta', function (Blueprint $table) {
             $table->increments('id');
-            $table->double('subtotal', 200);
-            $table->double('total', 50);
-            $table->date('fecha', 50);
+            $table->double('subtotal');
+            $table->double('total');
+            $table->date('fecha');
             $table->string('factura');
-            $table->integer('idMetodoPago', 100);
-            $table->integer('idPromocion', 20);
-            $table->integer('idPersona', 50);
+            $table->integer('idMetodoPago')->unsigned();
+            $table->integer('idPromocion')->unsigned();
+            $table->integer('idPersona')->unsigned();
             $table->timestamps();
 
 

@@ -15,19 +15,19 @@ class CreateProductoTable extends Migration
     {
         Schema::create('producto', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nombre', 200);
-            $table->string('descripcion', 50);
-            $table->date('fechaAlta', 50);
+            $table->string('nombre');
+            $table->string('descripcion');
+            $table->date('fechaAlta');
             $table->double('costoCompra');
-            $table->double('costoVenta', 100);
-            $table->double('stock', 20);
-            $table->string('modelo', 50)->nullable();
+            $table->double('costoVenta');
+            $table->double('stock');
+            $table->string('modelo')->nullable();
             $table->integer('idUnidad')->unsigned();
             $table->integer('idMarca')->unsigned();
             $table->integer('idCategoria')->unsigned();
             $table->integer('idSubcategoria')->unsigned();
-            $table->integer('idPromocion')->nullable();
-            $table->integer('idImagen')->nullable();
+            $table->integer('idPromocion')->unsigned()->nullable();
+            $table->integer('idImagen')->unsigned()->nullable();
 
             $table->foreign('idUnidad')->references('id')->on('cat_unidad')->onDelete('cascade');
             $table->foreign('idMarca')->references('id')->on('cat_marca')->onDelete('cascade');

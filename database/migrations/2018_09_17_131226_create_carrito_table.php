@@ -15,11 +15,11 @@ class CreateCarritoTable extends Migration
     {
         Schema::create('carrito', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('productos', 200);
-            $table->double('cantidad', 50);
-            $table->double('subtotal', 50);
+            $table->string('productos');
+            $table->double('cantidad');
+            $table->double('subtotal');
             $table->double('total');
-            $table->integer('idPersona');
+            $table->integer('idPersona')->unsigned();
 
             $table->foreign('idPersona')->references('id')->on('persona')->onDelete('cascade');
 
