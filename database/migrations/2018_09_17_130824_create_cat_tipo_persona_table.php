@@ -15,7 +15,7 @@ class CreateCatTipoPersonaTable extends Migration
     {
         Schema::create('cat_tipo_persona', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('tipoPersona');
+            $table->string('tipo');
             $table->timestamps();
         });
     }

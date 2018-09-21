@@ -15,8 +15,7 @@ class CreateCatMetodoPagoTable extends Migration
     {
         Schema::create('cat_metodo_pago', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('tipo');
-            $table->string('voucher');
+            $table->string('tipo');
             $table->timestamps();
         });
     }
