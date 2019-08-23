@@ -9,10 +9,10 @@
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="shortcut icon" href="images/favicon.ico" />
-		<link rel="stylesheet" href="css/animate.min.css">
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="{{ asset('plugins/fontawesome/css/all.css') }}">
-        <link rel="stylesheet" href="{{ asset('plugins/bootstrap/css/bootstrap.css') }}">
+		{{--  <link rel="stylesheet" href="css/animate.min.css">  --}}
+		{{--  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>  --}}
+		<link rel="stylesheet" href="{{ asset('plugins/fontawesome/css/all.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">		
         <link rel="stylesheet" href="{{ asset('css/templatemo-style.css') }}">
 		{{--  <script src="js/jquery.js"></script>
 		<script src="js/bootstrap.min.js"></script>
@@ -69,10 +69,9 @@
         <!-- end copyright -->
 
     </body>
-    <script src="{{ asset('plugins/fontawesome/js/all.js') }}"></script>
+	<script src="{{ asset('plugins/fontawesome/js/all.js') }}"></script>
+	<script src="{{ asset('js/app.js') }}"></script>
 	{{--  <script src="js/form-scripts.js"></script>  --}}
-    <script src="{{ asset('plugins/bootstrap/js/bootstrap.min.js') }}"></script>
-
-	<!--<script src="js/jquery-1.11.2.min.js"></script>-->
+    {{--  <script src="{{ asset('plugins/bootstrap/js/bootstrap.min.js') }}"></script>  --}}
 
 </html>

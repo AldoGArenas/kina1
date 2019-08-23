@@ -187,16 +187,16 @@ header .social-icon li a
 		line-height: 40px;
 		padding: 12px 0px 0px 12px;
 	}
-.navbar-default .navbar-nav li a
+.navbar-nav li a
 	{
 		font-weight: bold;
-		font-size: 13px;
+		/* font-size: 13px; */
 		height: 70px;
 		line-height: 40px;
 	}
 
-.navbar-default .navbar-nav > li > a.current {
-	color: #28A7E9;
+.navbar-nav>li.active>a {
+	color: #28A7E9 !important;
 }
 .templatemo-nav {
 	border-radius: 0;
