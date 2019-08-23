@@ -1,15 +1,24 @@
-
-<div id="toggle">
-    <div class="one"></div>
-    <div class="two"></div>
-    <div class="three"></div>
-</div>
-
-<div id="menu">
-    <ul class="menu-view list-unstyled">
-        <li class=" {{ Request::is( 'inicio') ?'active' : '' }}"><a href="{{route('inicio')}}"><img src="{{asset('images/icons/home-hover.png')}}"></a></li>
-        <li class=" {{ Request::is( 'nosotros') ? 'active' : '' }}"><a href="{{route('nosotros')}}"><img src="{{asset('images/icons/about.png')}}" onmouseover="this.src = '{{asset('images/icons/about-hover.png')}}'" onmouseout="this.src = '{{asset('images/icons/about.png')}}'"></a></li>
-        <li class=" {{ Request::is( 'acerca') ? 'active' : '' }}"><a href="{{route('acerca')}}"><img src="images/icons/portfolio.png" onmouseover="this.src = 'images/icons/portfolio-hover.png'" onmouseout="this.src = 'images/icons/portfolio.png'"></a></li>
-        <li class=" {{ Request::is( 'contacto') ? 'active' : '' }}"><a href="{{route('contacto')}}"><img src="images/icons/contact.png" onmouseover="this.src = 'images/icons/contact-hover.png'" onmouseout="this.src = 'images/icons/contact.png'"></a></li>
-    </ul>
-</div>
+<nav class="navbar navbar-default templatemo-nav" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon icon-bar"></span>
+                <span class="icon icon-bar"></span>
+                <span class="icon icon-bar"></span>
+            </button>
+            <div class="logo">
+            <a href="#" class="navbar-brand"><img src="{{ asset('images/MyR logo oficial HD.png')}}" width="180"/></a>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#top">INICIO</a></li>
+                <li><a href="#about">NOSOTROS</a></li>
+                <!--<li><a href="#team">EQUIPO</a></li>-->
+                <li><a href="#service">SERVICIOS</a></li>
+                <li><a href="{{route('productos')}}">PRODUCTOS</a></li>
+                <li><a href="#contact">CONTACTO</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
