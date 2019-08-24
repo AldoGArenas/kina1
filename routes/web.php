@@ -23,3 +23,9 @@ Route::get('/', function () {
 Route::get('/productos', function () {
     return view('productos');
 })->name('productos');
+Route::get('/contacto', function () {
+    return view('contenido.contacto');
+})->name('contacto');
+Route::get('/servicios', function () {
+    return view('contenido.servicios');
+})->name('servicios');

@@ -32,21 +32,21 @@
         <a href="#" class="navbar-brand"><img src="{{ asset('images/MyR logo oficial HD.png')}}" width="180"/></a>
     </div>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
+        <ul class="navbar-nav ml-auto">
+            <li class="{{ Request::is('/') ? 'active' : '' }} nav-item ">
                 <a class="nav-link" href="{{route('home')}}">INICIO</a>
             </li>
             <li class="nav-item ">
                 <a class="nav-link" href="#about">NOSOTROS</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#service">SERVICIOS</a>
+            <li class="{{ Request::is('servicios') ? 'active' : '' }} nav-item">
+                <a class="nav-link" href="{{route('servicios')}}">SERVICIOS</a>
             </li>
-            <li class="nav-item">
+            <li class="{{ Request::is('productos') ? 'active' : '' }} nav-item">
                 <a class="nav-link" href="{{route('productos')}}">PRODUCTOS</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#contact">CONTACTO</a>
+            <li class="{{ Request::is('contacto') ? 'active' : '' }} nav-item">
+                <a class="nav-link" href="{{route('contacto')}}">CONTACTO</a>
             </li>
             {{--  <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
