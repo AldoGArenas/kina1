@@ -29,3 +29,6 @@ Route::get('/contacto', function () {
 Route::get('/servicios', function () {
     return view('contenido.servicios');
 })->name('servicios');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
