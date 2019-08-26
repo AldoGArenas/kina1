@@ -69,8 +69,8 @@
         <!-- end copyright -->
 
     </body>
-	<script src="{{ asset('plugins/fontawesome/js/all.js') }}"></script>
 	<script src="{{ asset('js/app.js') }}"></script>
+	<script src="{{ asset('plugins/fontawesome/js/all.js') }}"></script>
 	{{--  <script src="js/form-scripts.js"></script>  --}}
     {{--  <script src="{{ asset('plugins/bootstrap/js/bootstrap.min.js') }}"></script>  --}}
 

@@ -20,6 +20,8 @@
         "vue": "^2.6.10"
     },
     "dependencies": {
+        "@fortawesome/fontawesome-free": "^5.10.2",
+        "@fortawesome/fontawesome-svg-core": "^1.2.22",
         "bootstrap-vue": "^2.0.0-rc.28"
     }
 }
