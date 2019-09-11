@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateImagenTable extends Migration
+class CreateDescuentoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateImagenTable extends Migration
      */
     public function up()
     {
-        Schema::create('imagen', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('archivo');
+        Schema::create('descuento', function (Blueprint $table) {
+            $table-> bigIncrements('id');
+            $table->integer('descuento');
+            $table->string('nombre');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -27,6 +29,6 @@ class CreateImagenTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('imagen');
+        Schema::dropIfExists('descuento');
     }
 }

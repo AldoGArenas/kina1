@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCatMetodoPagoTable extends Migration
+class CreateProductoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,13 @@ class CreateCatMetodoPagoTable extends Migration
      */
     public function up()
     {
-        Schema::create('cat_metodo_pago', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('tipo');
+        Schema::create('producto', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('nombre');
+            $table->string('descripcion');
+            $table->double('precio');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -27,6 +30,6 @@ class CreateCatMetodoPagoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cat_metodo_pago');
+        Schema::dropIfExists('producto');
     }
 }
