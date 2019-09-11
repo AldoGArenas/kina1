@@ -14,19 +14,14 @@ class CreateCompraTable extends Migration
     public function up()
     {
         Schema::create('compra', function (Blueprint $table) {
-            $table->increments('id');
-            $table->date('fecha');
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('idUser');
+            $table->string('descripcion');
             $table->double('total');
-            $table->string('comprobante');
-            $table->integer('idUsuario')->unsigned();
-            $table->integer('idProveedor')->unsigned();
-
-            $table->foreign('idUsuario')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('idProveedor')->references('id')->on('proveedor')->onDelete('cascade');
-           
- 
+            $table->string('proveedor');
             $table->timestamps();
-
+            $table->softDeletes();
+            $table->foreign('idUser')->references('id')->on('users');
         });
     }
 

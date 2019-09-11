@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCatMarcaTable extends Migration
+class CreateAlmacenTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,14 @@ class CreateCatMarcaTable extends Migration
      */
     public function up()
     {
-        Schema::create('cat_marca', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('nombre');
+        Schema::create('almacen', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('idProducto');
+            $table->date('fechaCompra');
             $table->timestamps();
+            $table->softDeletes();
+            $table->foreign('idProducto')->references('id')->on('producto');
+
         });
     }
 
@@ -27,6 +31,6 @@ class CreateCatMarcaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cat_marca');
+        Schema::dropIfExists('almacen');
     }
 }
