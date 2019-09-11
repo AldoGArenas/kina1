@@ -1,7 +1,14 @@
 @extends('main')
 @section('content')
 <div class="container">
-    <h2 class="wow bounceIn" data-wow-offset="50" data-wow-delay="0.3s">
+<div  id="produc" class="">
+		<productosc/>
+	
+</div>
+
+
+
+    {{--  <h2 class="wow bounceIn" data-wow-offset="50" data-wow-delay="0.3s">
 		<span>PRODUCTOS INDUSTRONIC</span>
 	</h2>
 	<!-- Nav pills -->
@@ -21,7 +28,7 @@
 			</li>
 			<li class="nav-item">
 				{{-- <a class="nav-link" data-toggle="pill" href="#createProduct">Crear producto</a> --}}
-				<a class="nav-link" data-toggle="pill" href="{{ route('logout') }}"
+				{{--<a class="nav-link" data-toggle="pill" href="{{ route('logout') }}"
 					onclick="event.preventDefault();
 									document.getElementById('logout-form').submit();">
 					{{ __('Cerrar sesión') }}
@@ -34,9 +41,6 @@
 				
 		@endif
 	</ul>
-	
-	
-
 	<!-- Tab panes -->
 	<div class="tab-content">
 		<div class="tab-pane container active" id="home1">.1..</div>
@@ -67,7 +71,7 @@
 						</div>
 						<div class="col-12">
 							<label for="descripcion" class="col-form-label">Descripción</label>
-							<input id="descripcion" type="text" class="form-control  name="descripcion">
+							<input id="descripcion" type="text" class="form-control"  name="descripcion">
 						</div><br>
 						<div class="col-12 float-left">
 							{!! Form::submit('Guardar', ['class' => 'btn btn-primary']) !!}
@@ -75,7 +79,7 @@
 					</div>
 			{!! Form::close() !!}
 		</div>
-	</div>
+	</div>  --}}
 	
 </div>
 @endsection

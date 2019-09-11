@@ -22,13 +22,13 @@ Route::get('/', function () {
 // Route::get('/contacto', 'ContactoController@index')->name('contacto');
 Route::get('/productos', 'ProductoController@index')->name('productos');
 Route::get('/productos-store', 'ProductoController@store')->name('productos.store');
-
 Route::get('/contacto', function () {
     return view('contenido.contacto');
 })->name('contacto');
 Route::get('/servicios', function () {
     return view('contenido.servicios');
 })->name('servicios');
+Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+

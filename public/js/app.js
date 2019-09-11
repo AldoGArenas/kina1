@@ -43848,6 +43848,9 @@ __webpack_require__.r(__webpack_exports__);
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 
 Vue.use(bootstrap_vue__WEBPACK_IMPORTED_MODULE_0__["default"]);
+
+Vue.component('b-carousel', bootstrap_vue__WEBPACK_IMPORTED_MODULE_0__["BCarousel"]);
+window.bcarousel = bootstrap_vue__WEBPACK_IMPORTED_MODULE_0__["BCarousel"];
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -43871,15 +43874,27 @@ Vue.use(bootstrap_vue__WEBPACK_IMPORTED_MODULE_0__["default"]);
 
 /***/ }),
 
+/***/ "./resources/assets/sass/productosC.scss":
+/*!***********************************************!*\
+  !*** ./resources/assets/sass/productosC.scss ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ 0:
-/*!***************************************************************************!*\
-  !*** multi ./resources/assets/js/app.js ./resources/assets/sass/app.scss ***!
-  \***************************************************************************/
+/*!*******************************************************************************************************************!*\
+  !*** multi ./resources/assets/js/app.js ./resources/assets/sass/app.scss ./resources/assets/sass/productosC.scss ***!
+  \*******************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! C:\laragon\www\Kina1\resources\assets\js\app.js */"./resources/assets/js/app.js");
-module.exports = __webpack_require__(/*! C:\laragon\www\Kina1\resources\assets\sass\app.scss */"./resources/assets/sass/app.scss");
+__webpack_require__(/*! C:\laragon\www\Kina1\resources\assets\sass\app.scss */"./resources/assets/sass/app.scss");
+module.exports = __webpack_require__(/*! C:\laragon\www\Kina1\resources\assets\sass\productosC.scss */"./resources/assets/sass/productosC.scss");
 
 
 /***/ })

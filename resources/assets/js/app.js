@@ -11,6 +11,9 @@ window.Vue = require('vue');
 import BootstrapVue from 'bootstrap-vue'
 
 Vue.use(BootstrapVue)
+import { BCarousel } from 'bootstrap-vue'
+Vue.component('b-carousel', BCarousel)
+window.bcarousel = BCarousel
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
