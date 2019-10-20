@@ -15,8 +15,8 @@ class Producto extends Model
         'precio'
     ];
 
-    public function imagenesDescuento(){
-        return $this->hasMany('App\Models\ImagenDescuento', 'idProducto', 'id');
+    public function imagenesProducto(){
+        return $this->hasMany('App\Models\ImagenProducto', 'idProducto', 'id');
     }
     
     public function almacen(){
