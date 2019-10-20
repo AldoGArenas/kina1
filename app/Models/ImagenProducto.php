@@ -4,14 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Producto extends Model
+class ImagenProducto extends Model
 {
-    public $table = 'producto';
-
+    public $table = 'imagen_producto';
+    
     public $fillable = [
         'id',
-        'nombre',
-        'descripcion',
-        'precio'
+        'idProducto',
+        'imagen',
     ];
+
 }
