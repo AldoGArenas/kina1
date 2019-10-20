@@ -13,7 +13,13 @@ class Compra extends Model
         'idUser',
         'descripcion',
         'total',
-        'proveedor',        
+        'proveedor',
     ];
 
+    public function usuario(){
+        return $this->belongsTo('App\User', 'idUser', 'id');
+    }
+    public function almacenCompra(){
+        return $this->belongsToMany('App\Models\Almacen','almacen_compra', 'idAlmacen', 'idCompra');
+    }   
 }

@@ -14,4 +14,7 @@ class Descuento extends Model
         'nombre',
     ];
 
+    public function ventas(){
+        return $this->hasMany('App\Models\Venta', 'idDescuento', 'id');
+    }
 }
