@@ -14,6 +14,7 @@
 		{{--  <link rel="stylesheet" href="{{ asset('plugins/fontawesome/css/all.css') }}">  --}}
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">		
         <link rel="stylesheet" href="{{ asset('css/templatemo-style.css') }}">
+		@stack('csss')
 		{{--  <link rel="stylesheet" href="{{ asset('css/plugins/bootstrap.min.css')}}">  --}}
 		{{--  <script src="{{asset('js/jquery.min.js')}}"></script>  --}}
 		{{--  
@@ -72,10 +73,10 @@
     </body>
 	<script src="{{ asset('js/app.js') }}"></script>
 	<script src="{{ asset('js/productosC.js') }}"></script>
-
+	@stack('scripts')
 	{{--  <script src="{{ asset('plugins/fontawesome/js/all.js') }}"></script>  --}}
 	{{--  <script src="js/form-scripts.js"></script>  --}}
-     {{--  <script src="{{ asset('plugins/bootstrap/js/bootstrap.min.js') }}"></script> 
-	 <script src="{{ asset('plugins/js/popper.min.js') }}"></script>  --}}
+    {{--  <script src="{{ asset('plugins/bootstrap/js/bootstrap.min.js') }}"></script> 
+	<script src="{{ asset('plugins/js/popper.min.js') }}"></script>  --}}
 
 </html>

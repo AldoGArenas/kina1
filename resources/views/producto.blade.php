@@ -1,14 +1,14 @@
 @extends('main')
 @section('content')
 <div class="container">
-<div  id="produc" class="">
+{{-- <div  id="produc" class="">
 		<productosc/>
 	
-</div>
+</div> --}}
 
 
 
-    {{--  <h2 class="wow bounceIn" data-wow-offset="50" data-wow-delay="0.3s">
+    <h2 class="wow bounceIn" data-wow-offset="50" data-wow-delay="0.3s">
 		<span>PRODUCTOS INDUSTRONIC</span>
 	</h2>
 	<!-- Nav pills -->
@@ -27,8 +27,8 @@
 				<a class="nav-link" data-toggle="pill" href="#createProduct">Crear producto</a>
 			</li>
 			<li class="nav-item">
-				{{-- <a class="nav-link" data-toggle="pill" href="#createProduct">Crear producto</a> --}}
-				{{--<a class="nav-link" data-toggle="pill" href="{{ route('logout') }}"
+				<a class="nav-link" data-toggle="pill" href="#createProduct">Crear producto</a>
+				<a class="nav-link" data-toggle="pill" href="{{ route('logout') }}"
 					onclick="event.preventDefault();
 									document.getElementById('logout-form').submit();">
 					{{ __('Cerrar sesión') }}
@@ -79,7 +79,15 @@
 					</div>
 			{!! Form::close() !!}
 		</div>
-	</div>  --}}
+	</div>
 	
 </div>
 @endsection
+@push('csss')
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+@endpush
+@push('scripts')
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+@endpush

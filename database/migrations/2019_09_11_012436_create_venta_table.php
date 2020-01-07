@@ -22,7 +22,7 @@ class CreateVentaTable extends Migration
             $table->double('total');
             $table->timestamps();
             $table->softDeletes();
-            $table->foreign('idUser')->references('id')->on('users');
+            //$table->foreign('idUser')->references('id')->on('users');
             $table->foreign('idDescuento')->references('id')->on('descuento');
         });
     }

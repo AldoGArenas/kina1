@@ -21,7 +21,7 @@ class CreateCompraTable extends Migration
             $table->string('proveedor');
             $table->timestamps();
             $table->softDeletes();
-            $table->foreign('idUser')->references('id')->on('users');
+            //$table->foreign('idUser')->references('id')->on('users');
         });
     }
 
