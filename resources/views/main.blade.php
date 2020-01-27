@@ -72,7 +72,7 @@
 
     </body>
 	<script src="{{ asset('js/app.js') }}"></script>
-	<script src="{{ asset('js/productosC.js') }}"></script>
+	{{-- <script src="{{ asset('js/productosC.js') }}"></script> --}}
 	@stack('scripts')
 	{{--  <script src="{{ asset('plugins/fontawesome/js/all.js') }}"></script>  --}}
 	{{--  <script src="js/form-scripts.js"></script>  --}}

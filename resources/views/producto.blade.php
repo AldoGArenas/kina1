@@ -27,7 +27,6 @@
 				<a class="nav-link" data-toggle="pill" href="#createProduct">Crear producto</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" data-toggle="pill" href="#createProduct">Crear producto</a>
 				<a class="nav-link" data-toggle="pill" href="{{ route('logout') }}"
 					onclick="event.preventDefault();
 									document.getElementById('logout-form').submit();">
@@ -44,26 +43,28 @@
 	<!-- Tab panes -->
 	<div class="tab-content">
 		<div class="tab-pane container active" id="home1">.1..</div>
-		<div class="tab-pane container fade" id="menu1">..2.</div>
-		<div class="tab-pane container fade" id="menu2">..3.</div>
 		<div class="tab-pane container fade" id="createProduct">
 			{!! Form::open(['route' => 'productos.store', 'enctype'=>'multipart/form-data']) !!}
 					<div class="form-group row">
 						<div class="col-6">
 							<label for="nombre" class="col-form-label">Nombre del Producto</label>
-							<input id="nombre" type="text" class="form-control  name="nombre">
+							<input id="nombre" type="text" class="form-control"  name="nombre">
 						</div>
 						<div class="col-6">
 							<label for="modelo" class="col-form-label">Modelo</label>
-							<input id="modelo" type="text" class="form-control  name="modelo">
+							<input id="modelo" type="text" class="form-control"  name="modelo">
 						</div>
 						<div class="col-6">
 							<label for="categoria" class="col-form-label">Categoria/Tipo</label>
-							<input id="categoria" type="text" class="form-control  name="categoria">
+							<input id="categoria" type="text" class="form-control"  name="categoria">
 						</div>
-						<div class="col-6">
+						<div class="col-3">
 							<label for="existencia" class="col-form-label">Existencia</label>
-							<input id="existencia" type="text" class="form-control  name="existencia">
+							<input id="existencia" type="text" class="form-control"  name="existencia">
+						</div>
+						<div class="col-3">
+							<label for="precio" class="col-form-label">precio</label>
+							<input id="precio" type="text" class="form-control"  name="precio">
 						</div>
 						<div class="col-12">
 							<label for="imagenes" class="col-form-label">Imagenes</label>
