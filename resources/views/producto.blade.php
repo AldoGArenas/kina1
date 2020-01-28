@@ -14,7 +14,7 @@
 	<!-- Nav pills -->
 	<ul class="nav nav-pills">
 		<li class="nav-item">
-			<a class="nav-link active" data-toggle="pill" href="#home1">tipo de producto</a>
+			<a class="nav-link active" data-toggle="pill" href="#productos">Productos</a>
 		</li>
 		<li class="nav-item">
 			<a class="nav-link" data-toggle="pill" href="#menu1">Menu 1</a>
@@ -42,42 +42,59 @@
 	</ul>
 	<!-- Tab panes -->
 	<div class="tab-content">
-		<div class="tab-pane container active" id="home1">.1..</div>
+		<div class="tab-pane container active" id="productos">
+			<table style="width:100%">
+				<tr>
+					<th>Nombre</th>
+					<th>Precio</th>
+					<th>Imagen</th>
+					<th>Descripcion</th>
+				</tr>
+				@forelse ($productos as $item)
+					<tr>
+						<td>{{$item->nombre}}</td>
+						<td>{{$item->descripcion}}</td>
+						<td>{{$item->precio}}</td>
+						<td>
+							@foreach ($item->imagenesProducto as $item)
+								{{storage_path().'/imagenes/producto/'.$item->imagen}}
+								
+							 	<img src="{{storage_path().'/imagenes/producto/'.$item->imagen}}">
+							
+							@endforeach
+						</td>
+					</tr>
+				@empty
+					<tr>
+						<td colspan="4"></td>
+					</tr>
+				@endforelse
+			</table>
+		</div>
 		<div class="tab-pane container fade" id="createProduct">
 			{!! Form::open(['route' => 'productos.store', 'enctype'=>'multipart/form-data']) !!}
-					<div class="form-group row">
-						<div class="col-6">
-							<label for="nombre" class="col-form-label">Nombre del Producto</label>
-							<input id="nombre" type="text" class="form-control"  name="nombre">
-						</div>
-						<div class="col-6">
-							<label for="modelo" class="col-form-label">Modelo</label>
-							<input id="modelo" type="text" class="form-control"  name="modelo">
-						</div>
-						<div class="col-6">
-							<label for="categoria" class="col-form-label">Categoria/Tipo</label>
-							<input id="categoria" type="text" class="form-control"  name="categoria">
-						</div>
-						<div class="col-3">
-							<label for="existencia" class="col-form-label">Existencia</label>
-							<input id="existencia" type="text" class="form-control"  name="existencia">
-						</div>
-						<div class="col-3">
-							<label for="precio" class="col-form-label">precio</label>
-							<input id="precio" type="text" class="form-control"  name="precio">
-						</div>
-						<div class="col-12">
-							<label for="imagenes" class="col-form-label">Imagenes</label>
-							{!! Form::file('imagenes', ['class' => '']) !!}
-						</div>
-						<div class="col-12">
-							<label for="descripcion" class="col-form-label">Descripción</label>
-							<input id="descripcion" type="text" class="form-control"  name="descripcion">
-						</div><br>
-						<div class="col-12 float-left">
-							{!! Form::submit('Guardar', ['class' => 'btn btn-primary']) !!}
-						</div>
+				<div class="form-group row">
+					<div class="col-6">
+						<label for="nombre" class="col-form-label">Nombre del Producto</label>
+						<input id="nombre" type="text" class="form-control"  name="nombre">
 					</div>
+					<div class="col-6">
+						<label for="precio" class="col-form-label">Precio</label>
+						<input id="precio" type="text" class="form-control"  name="precio">
+					</div>
+					<div class="col-12">
+						<label for="imagenes" class="col-form-label">Imagenes</label>
+						{!! Form::file('imagenes', ['class' => 'file']) !!}
+					</div>
+
+					<div class="col-12">
+						<label for="descripcion" class="col-form-label">Descripción</label>
+						<input id="descripcion" type="text" class="form-control"  name="descripcion">
+					</div><br>
+					<div class="col-12 float-left">
+						{!! Form::submit('Guardar', ['class' => 'btn btn-primary']) !!}
+					</div>
+				</div>
 			{!! Form::close() !!}
 		</div>
 	</div>

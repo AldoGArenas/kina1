@@ -12,7 +12,8 @@ class ProductoController extends Controller
     
     public function index()
     {
-        return view('producto');
+        $productos = Producto::all();
+        return view('producto')->with('productos',$productos);
     }
 
     public function create()
@@ -30,7 +31,7 @@ class ProductoController extends Controller
             $producto->precio = $request->precio;
             $producto->save();
             
-            $file = $request->file('file');
+            $file = $request->file('imagenes');
             $path = public_path() . '/imagenes/producto';
             $fileName = uniqid() . $file->getClientOriginalName();
         
@@ -41,6 +42,7 @@ class ProductoController extends Controller
             $imagen->idProducto = $producto->id;
             $imagen->save();
             DB::commit();
+            return route('producto');
         } catch (\Exception $e) {
             DB::rollback();
             return $e;
