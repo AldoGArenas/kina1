@@ -17,15 +17,9 @@
 			<a class="nav-link active" data-toggle="pill" href="#productos">Productos</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link" data-toggle="pill" href="#menu1">Menu 1</a>
-		</li>
-		<li class="nav-item">
-			<a class="nav-link" data-toggle="pill" href="#menu2">Menu 2</a>
+			<a class="nav-link" data-toggle="pill" href="#createProduct">Crear producto</a>
 		</li>
 		@if (Auth::check()) 
-			<li class="nav-item">
-				<a class="nav-link" data-toggle="pill" href="#createProduct">Crear producto</a>
-			</li>
 			<li class="nav-item">
 				<a class="nav-link" data-toggle="pill" href="{{ route('logout') }}"
 					onclick="event.preventDefault();
@@ -57,16 +51,13 @@
 						<td>{{$item->precio}}</td>
 						<td>
 							@foreach ($item->imagenesProducto as $item)
-								{{storage_path().'/imagenes/producto/'.$item->imagen}}
-								
-							 	<img src="{{storage_path().'/imagenes/producto/'.$item->imagen}}">
-							
+								<img src="{{asset('imagenes/producto/'.$item->imagen)}}">
 							@endforeach
 						</td>
 					</tr>
 				@empty
 					<tr>
-						<td colspan="4"></td>
+						<td colspan="4">SIN REGISTROS</td>
 					</tr>
 				@endforelse
 			</table>
@@ -84,7 +75,7 @@
 					</div>
 					<div class="col-12">
 						<label for="imagenes" class="col-form-label">Imagenes</label>
-						{!! Form::file('imagenes', ['class' => 'file']) !!}
+						{!! Form::file('imagenes[]', ['class' => 'file', 'multiple']) !!}
 					</div>
 
 					<div class="col-12">

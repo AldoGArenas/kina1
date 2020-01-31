@@ -6,6 +6,7 @@ use App\Models\ImagenProducto;
 use Illuminate\Http\Request;
 use App\Models\Producto;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class ProductoController extends Controller
 {
@@ -25,24 +26,26 @@ class ProductoController extends Controller
     {
         DB::beginTransaction();
         try {
+            
             $producto = new Producto();
             $producto->nombre = $request->nombre;
             $producto->descripcion = $request->descripcion;
             $producto->precio = $request->precio;
             $producto->save();
             
-            $file = $request->file('imagenes');
-            $path = public_path() . '/imagenes/producto';
-            $fileName = uniqid() . $file->getClientOriginalName();
-        
-            $file->move($path, $fileName);
-        
-            $imagen = new ImagenProducto();
-            $imagen->imagen = $fileName;
-            $imagen->idProducto = $producto->id;
-            $imagen->save();
+            foreach ($request->imagenes as $file) {
+                $path = public_path() . '/imagenes/producto';
+                $fileName = uniqid() . $file->getClientOriginalName();
+                $file->move($path, $fileName);
+                
+                $imagen = new ImagenProducto();
+                $imagen->imagen = $fileName;
+                $imagen->idProducto = $producto->id;
+                $imagen->save();
+            }
+
             DB::commit();
-            return route('producto');
+            return redirect()->route('productos');
         } catch (\Exception $e) {
             DB::rollback();
             return $e;
@@ -55,40 +58,64 @@ class ProductoController extends Controller
         //
     }
 
-    public function edit(Request $request, $id)
+    public function update(Request $request, $id)
     {
         DB::beginTransaction();
         try {
+            
             $producto = Producto::find($id);
             $producto->nombre = $request->nombre;
             $producto->descripcion = $request->descripcion;
             $producto->precio = $request->precio;
             $producto->save();
             
-            $file = $request->file('file');
-            $path = public_path() . '/imagenes/producto';
-            $fileName = uniqid() . $file->getClientOriginalName();
-        
-            $file->move($path, $fileName);
-        
-            $imagen = new ImagenProducto();
-            $imagen->imagen = $fileName;
-            $imagen->idProducto = $producto->id;
-            $imagen->save();
+            
+            $imagenes = ImagenProducto::where('idProducto',$producto->id)->get();
+            foreach ($imagenes as $key) {
+                $path = public_path() . '/imagenes/producto/';
+                Storage::delete($path.$key);
+                ImagenProducto::find($key->id)->delete();
+            }
+
+            foreach ($request->imagenes as $file) {
+                $path = public_path() . '/imagenes/producto';
+                $fileName = uniqid() . $file->getClientOriginalName();
+                $file->move($path, $fileName);
+                
+                $imagen = new ImagenProducto();
+                $imagen->imagen = $fileName;
+                $imagen->idProducto = $producto->id;
+                $imagen->save();
+            }
+
             DB::commit();
+            return redirect()->route('productos');
         } catch (\Exception $e) {
             DB::rollback();
             return $e;
         }
     }
 
-    public function update(Request $request, $id)
+    public function destroy(Request $request,$id)
     {
-        //
-    }
+        DB::beginTransaction();
+        try {
+            $producto = Producto::find($id);
+            
+            $imagenes = ImagenProducto::where('idProducto',$producto->id)->get();
+            foreach ($imagenes as $key) {
+                $path = public_path() . '/imagenes/producto/';
+                Storage::delete($path.$key);
+                ImagenProducto::find($key->id)->delete();
+            }    
+            
+            $producto->delete();
+            DB::commit();
+            return redirect()->route('productos');
+        } catch (\Exception $e) {
+            DB::rollback();
+            return $e;
+        }
 
-    public function destroy($id)
-    {
-        //
     }
 }
